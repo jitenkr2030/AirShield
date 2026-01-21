@@ -1,0 +1,33 @@
+# Air Quality Labels for ML Model
+# These labels correspond to different air quality conditions that can be detected in photos
+
+clear_sky
+hazy
+smoggy
+dusty
+foggy
+polluted
+clean_air
+moderate_pollution
+heavy_pollution
+industrial_emission
+traffic_pollution
+wildfire_smoke
+construction_dust
+vehicle_exhaust
+factory_smoke
+chemical_vapors
+particulate_matter
+ozone_layer
+visibility_reduced
+atmospheric_haze
+urban_pollution
+rural_clean
+industrial_zone
+traffic_congested
+clean_weather
+poor_visibility
+toxic_air
+fresh_air
+stagnant_air
+wind_blown_dust

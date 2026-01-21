@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- App Configuration -->
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>AIRSHIELD</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>airshield</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+
+	<!-- Minimum iOS Version -->
+	<key>MinimumOSVersion</key>
+	<string>12.0</string>
+
+	<!-- App Transport Security -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>airshield.app</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>api.airshield.app</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+
+	<!-- Required Device Capabilities -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+		<string>arm64</string>
+	</array>
+
+	<!-- Supported Interface Orientations -->
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+
+	<!-- Supported Interface Orientations (iPad) -->
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+
+	<!-- Privacy - Location Usage Descriptions -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>AIRSHIELD needs location access to provide real-time air quality monitoring and personalized health recommendations based on your current area.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>AIRSHIELD needs location access to monitor air quality continuously, even when the app is in background, to provide comprehensive pollution tracking and health alerts.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>AIRSHIELD needs location access to monitor air quality continuously for accurate health tracking and pollution predictions.</string>
+
+	<!-- Privacy - Camera Usage Description -->
+	<key>NSCameraUsageDescription</key>
+	<string>AIRSHIELD uses your camera to analyze air quality by processing photos of your environment. Your photos are processed locally and never stored on our servers.</string>
+
+	<!-- Privacy - Photo Library Usage Description -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>AIRSHIELD needs photo library access to analyze existing photos for air quality assessment and to save air quality reports and predictions to your photos.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>AIRSHIELD needs permission to save air quality reports and analysis results to your photo library.</string>
+
+	<!-- Privacy - Bluetooth Usage Description -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>AIRSHIELD uses Bluetooth to connect with air quality sensors and monitoring devices to provide accurate pollution readings.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>AIRSHIELD connects to Bluetooth-enabled air quality sensors for accurate pollution monitoring.</string>
+
+	<!-- Background Modes -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>location</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+	</array>
+
+	<!-- App Categories -->
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.healthcare-fitness</string>
+
+	<!-- URL Schemes -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.airshield.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>airshield</string>
+			</array>
+		</dict>
+	</array>
+
+	<!-- Query URL Schemes -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>prefs</string>
+		<string>app-settings</string>
+		<string>bluetooth-settings</string>
+		<string>location-services</string>
+	</array>
+
+	<!-- Scene Configuration -->
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+
+	<!-- Health Capabilities -->
+	<key>NSHealthShareUsageDescription</key>
+	<string>AIRSHIELD accesses health data to provide personalized air quality recommendations based on your respiratory health conditions and activity levels.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>AIRSHIELD saves air quality exposure data to HealthKit to help you track your environmental health impact over time.</string>
+
+	<!-- Motion & Fitness -->
+	<key>NSMotionUsageDescription</key>
+	<string>AIRSHIELD uses motion and fitness data to correlate your physical activity with air quality exposure for comprehensive health monitoring.</string>
+
+	<!-- Speech Recognition -->
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>AIRSHIELD uses speech recognition to provide voice commands for hands-free air quality queries and navigation assistance.</string>
+
+	<!-- App Transport Security -->
+	<key>NSAllowsArbitraryLoadsInWebContent</key>
+	<false/>
+	<key>NSAllowsLocalNetworking</key>
+	<true/>
+
+	<!-- Metal Performance Shaders (for ML) -->
+	<key>NSMetalPerformanceShaders</key>
+	<true/>
+
+	<!-- Core ML -->
+	<key>NSCameraUsageDescription_camera</key>
+	<string>AIRSHIELD uses camera for visual air quality analysis using machine learning models.</string>
+
+	<!-- Privacy - Microphone Usage -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>AIRSHIELD may use microphone for voice commands to query air quality information without touching the screen.</string>
+
+	<!-- Background App Refresh -->
+	<key>UIBackgroundRefreshUsageDescription</key>
+	<string>AIRSHIELD needs background refresh to continuously monitor air quality updates and provide timely health alerts.</string>
+
+	<!-- Push Notifications -->
+	<key>NSUserNotificationAlertStyle</key>
+	<string>alert</string>
+
+	<!-- App Store Review -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+
+	<!-- Launch Screen -->
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+
+	<!-- Status Bar Style -->
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
+
+	<!-- View Controller Based Status Bar -->
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+
+	<!-- Hide Home Indicator -->
+	<key>UIRequiresPersistentWiFi</key>
+	<false/>
+
+	<!-- Alternative Icons -->
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon-App-20x20@1x</string>
+				<string>Icon-App-20x20@2x</string>
+				<string>Icon-App-20x20@3x</string>
+				<string>Icon-App-29x29@1x</string>
+				<string>Icon-App-29x29@2x</string>
+				<string>Icon-App-29x29@3x</string>
+				<string>Icon-App-40x40@1x</string>
+				<string>Icon-App-40x40@2x</string>
+				<string>Icon-App-40x40@3x</string>
+				<string>Icon-App-60x60@2x</string>
+				<string>Icon-App-60x60@3x</string>
+				<string>Icon-App-76x76@1x</string>
+				<string>Icon-App-76x76@2x</string>
+				<string>Icon-App-83.5x83.5@2x</string>
+				<string>Icon-App-1024x1024@1x</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

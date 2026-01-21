@@ -1,0 +1,18 @@
+# Android Release Configuration for AIRSHIELD
+
+# Copy this to android/key.properties after generating your release keystore
+
+# Generated with:
+# keytool -genkey -v -keystore airshield-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias airshield
+
+storePassword=YOUR_SECURE_STORE_PASSWORD
+keyPassword=YOUR_SECURE_KEY_PASSWORD  
+keyAlias=airshield
+storeFile=/path/to/your/secure/location/airshield-release-key.jks
+
+# SECURITY NOTES:
+# 1. Store this file securely - do NOT commit to version control
+# 2. Use strong, unique passwords
+# 3. Backup the keystore file to secure cloud storage
+# 4. Consider using environment variables or CI/CD secret management
+# 5. Rotate keys annually for enhanced security

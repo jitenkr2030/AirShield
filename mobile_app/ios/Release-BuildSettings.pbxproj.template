@@ -1,0 +1,196 @@
+# iOS Project Configuration Template
+# This file contains the essential configuration for iOS release builds
+# Copy relevant sections to ios/Runner.xcodeproj/project.pbxproj
+
+# Build Settings for Release Configuration
+
+# Deployment Target
+IPHONEOS_DEPLOYMENT_TARGET = 12.0
+
+# Architecture Settings
+ARCHS = arm64
+VALIDATE_ARCH = arm64
+ONLY_ACTIVE_ARCH = NO
+
+# Swift Version
+SWIFT_VERSION = 5.0
+
+# Optimization Settings for Release
+SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule"
+SWIFT_COMPILATION_MODE = wholemodule
+
+# Code Signing (Release)
+CODE_SIGN_IDENTITY = "iPhone Distribution"
+DEVELOPMENT_TEAM = YOUR_TEAM_ID
+CODE_SIGN_STYLE = Manual
+PROVISIONING_PROFILE_SPECIFIER = AirShield-Release
+
+# Bundle Identifier (Release)
+PRODUCT_BUNDLE_IDENTIFIER = com.airshield.app
+
+# App Transport Security
+NSAppTransportSecurity = {
+    NSAllowsArbitraryLoads = NO;
+    NSExceptionDomains = {
+        "api.airshield.app" = {
+            NSIncludesSubdomains = YES;
+            NSExceptionAllowsInsecureHTTPLoads = NO;
+        };
+    };
+};
+
+# Required iOS Capabilities
+UIRequiredDeviceCapabilities = (
+    armv7,
+    arm64,
+    location,
+    camera,
+    bluetooth-le,
+);
+
+# Background Modes (iOS)
+UIBackgroundModes = (
+    fetch,
+    location,
+    processing,
+    bluetooth-central,
+    bluetooth-peripheral,
+);
+
+# Push Notifications
+UIRemoteNotifications = YES;
+UIUserNotificationSettings = {
+    types = (
+        UIUserNotificationTypeAlert,
+        UIUserNotificationTypeBadge,
+        UIUserNotificationTypeSound,
+    );
+};
+
+# HealthKit Capabilities
+NSHealthShareUsageDescription = "AIRSHIELD accesses health data to provide personalized air quality recommendations.";
+NSHealthUpdateUsageDescription = "AIRSHIELD saves air quality exposure data to HealthKit for comprehensive tracking.";
+
+# Privacy Descriptions
+NSCameraUsageDescription = "AIRSHIELD uses camera for visual air quality analysis with on-device processing.";
+NSLocationWhenInUseUsageDescription = "AIRSHIELD needs location access for real-time air quality monitoring.";
+NSBluetoothAlwaysUsageDescription = "AIRSHIELD uses Bluetooth to connect with air quality sensors.";
+NSPhotoLibraryUsageDescription = "AIRSHIELD accesses photos for air quality analysis and to save reports.";
+
+# Metal Performance Shaders (for ML)
+NSMetalPerformanceShaders = YES;
+
+# Core ML Framework
+COREML_USE_STATIC_FRAMEWORK = YES;
+
+# Framework Search Paths
+FRAMEWORK_SEARCH_PATHS = (
+    "$(inherited)",
+    "$(PROJECT_DIR)/ios/.symlinks/plugins/firebase_core/ios",
+    "$(PROJECT_DIR)/ios/.symlinks/plugins/firebase_analytics/ios",
+    "$(PROJECT_DIR)/ios/.symlinks/plugins/firebase_messaging/ios",
+    "$(PROJECT_DIR)/ios/.symlinks/plugins/google_maps_flutter/ios",
+    "$(PROJECT_DIR)/ios/.symlinks/plugins/tflite_flutter/ios",
+);
+
+# Library Search Paths
+LIBRARY_SEARCH_PATHS = (
+    "$(inherited)",
+    "$(PROJECT_DIR)/ios/.symlinks/plugins/tflite_flutter/ios",
+);
+
+# Enable Bitcode (Disabled for Flutter)
+ENABLE_BITCODE = NO;
+
+# Dead Code Stripping
+DEAD_CODE_STRIPPING = YES;
+GCC_OPTIMIZATION_LEVEL = 3;
+GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+
+# Debug Information Format
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+
+# Swift Compilation
+SWIFT_ENABLE_BATCH_MODE = YES;
+SWIFT_OPTIMIZE_OBJECT_LIFETIME = YES;
+SWIFT_COMPILATION_MODE = wholemodule;
+
+# Link-Time Optimization
+ENABLE_LTO = YES;
+LTO_EXECUTABLE_PATH = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/llvm-lto";
+LTO_FILE_LIST = "$(TEMP_DIR)/LTOFileList";
+
+# Code Signing for Frameworks
+CODE_SIGNING_REQUIRED = YES;
+CODE_SIGNING_ALLOWED = YES;
+
+# Provisioning Profiles
+PROVISIONING_PROFILE = "";
+PROVISIONING_PROFILESpecifier = "";
+CODE_SIGN_IDENTITY = "iPhone Distribution";
+DEVELOPMENT_TEAM = "";
+
+# Build Settings for Different Configurations
+
+# Debug Configuration
+GCC_PREPROCESSOR_DEFINITIONS = (
+    "DEBUG=1",
+    "$(inherited)",
+);
+ONLY_ACTIVE_ARCH = YES;
+
+# Release Configuration  
+SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+SWIFT_COMPILATION_MODE = wholemodule;
+GCC_OPTIMIZATION_LEVEL = 3;
+ONLY_ACTIVE_ARCH = NO;
+
+# Performance Optimizations
+GCC_FAST_MATH = YES;
+GCC_STRICT_ALIASING = YES;
+GCC_UNROLL_LOOPS = YES;
+GCC_VECTORIZE = YES;
+
+# Memory Optimizations
+CLANG_ENABLE_MODULES = YES;
+CLANG_MODULES_AUTOLINK = YES;
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+
+# Security Settings
+GCC_ENABLE_OBJC_GC = NO;
+GCC_NO_COMMON_BLOCKS = YES;
+
+# iOS Specific Settings
+IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+TARGETED_DEVICE_FAMILY = 1,2;
+
+# Enable ARC
+CLANG_ENABLE_OBJC_ARC = YES;
+
+# Swift Language Version
+SWIFT_LANGUAGE_VERSION = 5;
+
+# Code Coverage
+CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+
+# Warning Settings
+GCC_WARN_ABOUT_RETURN_TYPE = YES;
+GCC_WARN_UNDECLARED_SELECTOR = YES;
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+GCC_WARN_UNUSED_FUNCTION = YES;
+GCC_WARN_UNUSED_VARIABLE = YES;
+
+# Note: Replace YOUR_TEAM_ID with actual Apple Developer Team ID
+# Obtain this from: https://developer.apple.com/account/resources/identifiers/list/team
+
+# Security for Release Builds
+GCC_ENABLE_FIX_AND_CONTINUE = NO;
+GCC_DYNAMIC_NO_PIC = NO;
+GCC_NO_COMMON_BLOCKS = YES;
+GCC_OPTIMIZATION_LEVEL = 3;
+GCC_PREPROCESSOR_DEFINITIONS = (
+    "NDEBUG=1",
+    "$(inherited)",
+);
